@@ -1,7 +1,8 @@
 local PlaceScripts = {
     [155615604] = "https://raw.githubusercontent.com/4levy/Elystra.wtf/refs/heads/main/PL.lua",
     [77837537595343] = "https://raw.githubusercontent.com/4levy/Elystra.wtf/refs/heads/main/BannaTown.lua",
-    [114116662845070] = "https://raw.githubusercontent.com/4levy/Elystra.wtf/refs/heads/main/CityBanna.lua"
+    [114116662845070] = "https://raw.githubusercontent.com/4levy/Elystra.wtf/refs/heads/main/CityBanna.lua",
+    [14807448145] = "https://raw.githubusercontent.com/umrfyn/Elystra.wtf/refs/heads/main/ThaiBanCity.lua"
 }
 
 local currentPlaceId = game.PlaceId
