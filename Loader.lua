@@ -5,19 +5,20 @@ local PlaceScripts = {
     [14807448145] = "https://raw.githubusercontent.com/umrfyn/Elystra.wtf/refs/heads/main/ThaiBanCity.txt"
 }
 
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
 local currentPlaceId = game.PlaceId
 
-if PlaceScripts[currentPlaceId] then
-    local scriptUrl = PlaceScripts[currentPlaceId]
-    local success, err = pcall(function()
+local scriptUrl = PlaceScripts[currentPlaceId]
+
+if scriptUrl then
+    local ok = pcall(function()
         loadstring(game:HttpGet(scriptUrl))()
     end)
 
-    if success then
-        print("Script executed successfully for PlaceId:", currentPlaceId)
-    else
-        warn("Failed to execute script for PlaceId:", currentPlaceId, err)
+    if not ok then
+        LocalPlayer:Kick("Script failed to load.")
     end
 else
-    print("No script configured for this PlaceId:", currentPlaceId)
+    LocalPlayer:Kick("This game is not supported.")
 end
